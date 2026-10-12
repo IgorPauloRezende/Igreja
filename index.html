@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0F2722">
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23173D35'/%3E%3Cpath d='M28 12h8v14h14v8H36v20h-8V34H14v-8h14z' fill='%23D8BD80'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="./images/logo.png">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -163,7 +162,7 @@
     }
 
 
-    /* Liquid Glass corrigido e unificado (sem listras ou manchas estranhas) */
+    /* Liquid Glass corrigido e unificado */
     #main-header {
       animation: parishHeaderEnter .9s cubic-bezier(.16, 1, .3, 1) both;
       perspective: 900px;
@@ -318,7 +317,7 @@
       }
     }
 
-    /* ===== Menu lateral em liquid glass ===== */
+    /* Menu lateral em liquid glass */
     .drawer-glass {
       isolation: isolate;
       overflow-x: hidden;
@@ -390,50 +389,8 @@
 
       <!-- Logo & Nome da Paróquia -->
       <a href="#inicio" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-        <svg width="34" height="44" viewBox="0 0 240 312" fill="none"
-          class="w-7 h-auto sm:w-[34px] shrink-0 drop-shadow-sm select-none transition-transform duration-300 group-hover:scale-105">
-          <defs>
-            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#F9E8B2" />
-              <stop offset="50%" stop-color="#D8BD80" />
-              <stop offset="100%" stop-color="#A88B46" />
-            </linearGradient>
-            <linearGradient id="redGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#DC2626" />
-              <stop offset="100%" stop-color="#991B1B" />
-            </linearGradient>
-            <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#15803D" />
-              <stop offset="50%" stop-color="#166534" />
-              <stop offset="100%" stop-color="#14532D" />
-            </linearGradient>
-          </defs>
-          <rect x="114" y="10" width="12" height="70" fill="url(#goldGrad)" stroke="#78350F" stroke-width="1.5"
-            rx="1.5" />
-          <rect x="90" y="32" width="60" height="12" fill="url(#goldGrad)" stroke="#78350F" stroke-width="1.5"
-            rx="1.5" />
-          <circle cx="120" cy="8" r="8" fill="url(#goldGrad)" stroke="#78350F" stroke-width="1.5" />
-          <circle cx="120" cy="8" r="3.5" fill="#7E22CE" />
-          <circle cx="86" cy="38" r="8" fill="url(#goldGrad)" stroke="#78350F" stroke-width="1.5" />
-          <circle cx="86" cy="38" r="3.5" fill="#7E22CE" />
-          <circle cx="154" cy="38" r="8" fill="url(#goldGrad)" stroke="#78350F" stroke-width="1.5" />
-          <circle cx="154" cy="38" r="3.5" fill="#7E22CE" />
-          <circle cx="120" cy="38" r="5" fill="#581C87" stroke="#FDE68A" stroke-width="1" />
-          <path
-            d="M60 84 C70 80, 100 82, 120 90 C140 82, 170 80, 180 84 C186 110, 186 170, 120 236 C54 170, 54 110, 60 84 Z"
-            fill="#FFFFFF" stroke="#78350F" stroke-width="2" />
-          <path d="M60 84 C70 80, 100 82, 120 90 C108 126, 88 160, 66 182 C56 140, 56 106, 60 84 Z" fill="url(#redGrad)"
-            stroke="#7F1D1D" stroke-width="1.5" />
-          <path d="M180 84 C170 80, 140 82, 120 90 C132 126, 152 160, 174 182 C184 140, 184 106, 180 84 Z"
-            fill="url(#redGrad)" stroke="#7F1D1D" stroke-width="1.5" />
-          <circle cx="91" cy="120" r="10" fill="#FFFFFF" />
-          <circle cx="150" cy="120" r="8" fill="#DC2626" />
-          <rect x="108" y="164" width="24" height="42" fill="url(#greenGrad)" stroke="#14532D" stroke-width="1.5" />
-          <rect x="90" y="174" width="18" height="32" fill="url(#greenGrad)" stroke="#14532D" stroke-width="1.5" />
-          <rect x="132" y="174" width="18" height="32" fill="url(#greenGrad)" stroke="#14532D" stroke-width="1.5" />
-          <polygon points="120,270 115,225 125,225" fill="url(#goldGrad)" stroke="#78350F" stroke-width="1" />
-          <path d="M30 178 Q120 270 210 178 Q120 246 30 178 Z" fill="#FFFFFF" stroke="#78350F" stroke-width="1.5" />
-        </svg>
+        <img src="./images/logo.png" alt="Brasão Paróquia Rainha Santa Isabel"
+          class="h-9 sm:h-11 w-auto shrink-0 drop-shadow-sm select-none transition-transform duration-300 group-hover:scale-105 object-contain">
 
         <div class="leading-tight">
           <span
@@ -493,7 +450,11 @@
       class="fixed inset-y-3 right-3 drawer-glass w-[calc(100%-1.5rem)] max-w-sm p-6 flex flex-col justify-between overflow-y-auto overscroll-contain">
       <div>
         <div class="flex items-center justify-between pb-4 border-b border-white/20">
-          <span class="font-serif text-lg font-bold text-white">Santa Isabel (Casa Verde)</span>
+          <div class="flex items-center gap-2.5">
+            <img src="./images/logo.png" alt="Logo Paróquia"
+              class="h-7 w-auto object-contain drop-shadow-sm select-none">
+            <span class="font-serif text-lg font-bold text-white">Santa Isabel (Casa Verde)</span>
+          </div>
           <button id="close-drawer-btn"
             class="p-2 rounded-full text-white bg-white/10 border border-white/25 hover:bg-white/20 transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -539,13 +500,14 @@
 
   <main id="conteudo">
     <!-- ==========================================
-       2. PRIMEIRO BANNER PRINCIPAL (HERO)
+       2. PRIMEIRO BANNER PRINCIPAL (HERO) COM IMAGEM DE FUNDO igreja.jpg
        ========================================== -->
     <section id="inicio"
-      class="relative min-h-[90vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#0F2722] pt-24">
-      <div class="absolute inset-0 z-0 bg-gradient-to-t from-[#0F2722] via-[#173D35]/90 to-[#173D35]/70">
+      class="relative min-h-[90vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#0F2722] pt-24 bg-cover bg-center"
+      style="background-image: url('./images/igreja.jpg');">
+      <div class="absolute inset-0 z-0 bg-gradient-to-t from-[#0F2722] via-[#0F2722]/85 to-[#173D35]/75">
         <div
-          class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#0F2722]/50 to-[#0F2722]/90">
+          class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#0F2722]/60 to-[#0F2722]/95">
         </div>
       </div>
 
@@ -1003,34 +965,8 @@
             <div class="lg:col-span-5" id="tab-visual-container">
               <div
                 class="card-animated rounded-2xl shadow-lg border-2 border-white bg-white p-6 sm:p-8 flex flex-col items-center justify-center text-center">
-                <svg width="110" height="140" viewBox="0 0 240 312" fill="none" class="drop-shadow-sm select-none">
-                  <rect x="114" y="10" width="12" height="70" fill="#D8BD80" stroke="#78350F" stroke-width="1.5"
-                    rx="1.5" />
-                  <rect x="90" y="32" width="60" height="12" fill="#D8BD80" stroke="#78350F" stroke-width="1.5"
-                    rx="1.5" />
-                  <circle cx="120" cy="8" r="8" fill="#D8BD80" stroke="#78350F" stroke-width="1.5" />
-                  <circle cx="120" cy="8" r="3.5" fill="#7E22CE" />
-                  <circle cx="86" cy="38" r="8" fill="#D8BD80" stroke="#78350F" stroke-width="1.5" />
-                  <circle cx="86" cy="38" r="3.5" fill="#7E22CE" />
-                  <circle cx="154" cy="38" r="8" fill="#D8BD80" stroke="#78350F" stroke-width="1.5" />
-                  <circle cx="154" cy="38" r="3.5" fill="#7E22CE" />
-                  <circle cx="120" cy="38" r="5" fill="#581C87" stroke="#FDE68A" stroke-width="1" />
-                  <path
-                    d="M60 84 C70 80, 100 82, 120 90 C140 82, 170 80, 180 84 C186 110, 186 170, 120 236 C54 170, 54 110, 60 84 Z"
-                    fill="#FFFFFF" stroke="#78350F" stroke-width="2" />
-                  <path d="M60 84 C70 80, 100 82, 120 90 C108 126, 88 160, 66 182 C56 140, 56 106, 60 84 Z"
-                    fill="#DC2626" stroke="#7F1D1D" stroke-width="1.5" />
-                  <path d="M180 84 C170 80, 140 82, 120 90 C132 126, 152 160, 174 182 C184 140, 184 106, 180 84 Z"
-                    fill="#DC2626" stroke="#7F1D1D" stroke-width="1.5" />
-                  <circle cx="91" cy="120" r="10" fill="#FFFFFF" />
-                  <circle cx="150" cy="120" r="8" fill="#DC2626" />
-                  <rect x="108" y="164" width="24" height="42" fill="#15803D" stroke="#14532D" stroke-width="1.5" />
-                  <rect x="90" y="174" width="18" height="32" fill="#15803D" stroke="#14532D" stroke-width="1.5" />
-                  <rect x="132" y="174" width="18" height="32" fill="#15803D" stroke="#14532D" stroke-width="1.5" />
-                  <polygon points="120,270 115,225 125,225" fill="#D8BD80" stroke="#78350F" stroke-width="1" />
-                  <path d="M30 178 Q120 270 210 178 Q120 246 30 178 Z" fill="#FFFFFF" stroke="#78350F"
-                    stroke-width="1.5" />
-                </svg>
+                <img src="./images/logo.png" alt="Brasão Oficial da Paróquia Rainha Santa Isabel"
+                  class="w-[180px] sm:w-[200px] h-auto object-contain drop-shadow-md select-none">
                 <h4 class="font-serif text-lg font-bold text-[#173D35] mt-4">Brasão Oficial Paroquial</h4>
                 <p class="text-xs text-[#343A36]/70 mt-1">Paróquia Rainha Santa Isabel (Casa Verde, SP) · 02/10/1967</p>
               </div>
@@ -1415,8 +1351,8 @@
             class="card-animated lg:col-span-5 bg-white rounded-2xl p-5 sm:p-8 border border-[#D8BD80]/40 shadow-lg flex flex-col justify-between">
             <div>
               <div
-                class="bg-[#173D35] text-[#D8BD80] p-6 rounded-xl text-center mb-6 border border-[#D8BD80]/30 shadow-inner">
-                <span class="text-4xl block mb-2">†</span>
+                class="bg-[#173D35] text-[#D8BD80] p-6 rounded-xl text-center mb-6 border border-[#D8BD80]/30 shadow-inner flex flex-col items-center">
+                <img src="./images/logo.png" alt="Logo Paróquia" class="h-12 w-auto object-contain mb-2 drop-shadow">
                 <span class="text-xs uppercase tracking-widest text-[#D8BD80] block font-semibold">Patrono
                   Espiritual</span>
                 <h4 class="font-serif text-2xl font-bold text-white mt-1">São Carlo Acutis</h4>
@@ -1800,8 +1736,8 @@
         class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         <div class="flex items-center gap-4">
           <div
-            class="w-12 h-12 rounded-full bg-[#173D35] border border-[#D8BD80] flex items-center justify-center text-[#D8BD80] font-serif text-2xl font-bold">
-            †
+            class="w-12 h-12 rounded-full bg-[#173D35] border border-[#D8BD80] flex items-center justify-center overflow-hidden p-1">
+            <img src="./images/logo.png" alt="Logo Paróquia" class="w-full h-full object-contain">
           </div>
           <div>
             <span class="font-serif text-2xl sm:text-3xl font-bold text-[#FFFFFF] tracking-tight block">
