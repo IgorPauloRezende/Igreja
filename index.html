@@ -139,29 +139,6 @@
       }
     }
 
-    .tgh-band {
-      perspective: 1200px;
-      perspective-origin: 50% 56%;
-      mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-    }
-
-    .tgh-tile {
-      transform-style: preserve-3d;
-      animation: tgh-orbit 24s linear infinite;
-    }
-
-    @keyframes tgh-orbit {
-      from {
-        transform: translateZ(300px) rotateY(-45deg) translateZ(-300px);
-      }
-
-      to {
-        transform: translateZ(300px) rotateY(45deg) translateZ(-300px);
-      }
-    }
-
-
     /* Liquid Glass corrigido e unificado */
     #main-header {
       animation: parishHeaderEnter .9s cubic-bezier(.16, 1, .3, 1) both;
@@ -311,7 +288,6 @@
         transition: none !important;
       }
 
-      .tgh-tile,
       .drawer-glass::after {
         animation: none !important;
       }
@@ -1657,14 +1633,6 @@
         </p>
       </div>
 
-      <!-- Galeria 3D -->
-      <div
-        class="relative w-full h-[240px] sm:h-[420px] flex items-center justify-center overflow-hidden tgh-band mb-10 sm:mb-16">
-        <div id="tilted-grid-track" class="relative w-full h-full flex items-center justify-center"
-          style="transform-style: preserve-3d;">
-        </div>
-      </div>
-
       <!-- Cards de Redes Sociais -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
@@ -1994,54 +1962,6 @@
        JAVASCRIPT GERAL E CONTROLE DO HAMBÚRGUER
        ========================================== -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const track = document.getElementById('tilted-grid-track');
-      if (track) {
-        const images = [
-          { src: './images/comunidade.jpg', alt: 'Igreja e comunidade' },
-          { src: './images/igreja.jpg', alt: 'Celebração litúrgica' },
-          { src: './images/acutis.webp', alt: 'Momento de oração' },
-          { src: './images/comunidade.jpg', alt: 'Comunidade reunida' }
-        ];
-
-        const columns = 5;
-        const slices = 16;
-
-        for (let t = 0; t < columns; t++) {
-          const tile = document.createElement('div');
-          tile.className = 'tgh-tile absolute';
-          tile.style.width = '240px';
-          tile.style.height = '145px';
-          tile.style.animationDelay = `${-t * 4.8}s`;
-
-          const imgObj = images[t % images.length];
-
-          for (let k = 0; k < slices; k++) {
-            const slice = document.createElement('div');
-            slice.className = 'absolute top-0 overflow-hidden bg-stone-900';
-            const shareWidth = 240 / slices;
-            slice.style.left = `${k * shareWidth}px`;
-            slice.style.width = `${shareWidth + 1}px`;
-            slice.style.height = '145px';
-            slice.style.transform = `rotateY(${(k - slices / 2) * 3.5}deg)`;
-
-            const img = document.createElement('img');
-            img.src = imgObj.src;
-            img.alt = imgObj.alt;
-            img.className = 'absolute top-0 max-w-none object-cover';
-            img.style.left = `-${k * shareWidth}px`;
-            img.style.width = '240px';
-            img.style.height = '145px';
-
-            slice.appendChild(img);
-            tile.appendChild(slice);
-          }
-          track.appendChild(tile);
-        }
-      }
-
-    });
-
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const drawer = document.getElementById('mobile-drawer');
     const closeDrawerBtn = document.getElementById('close-drawer-btn');
