@@ -6,32 +6,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0F2722">
   <link rel="icon" type="image/png" href="./images/logo.png">
+  <link rel="canonical" href="https://www.paroquiasantaisabel.com.br/">
+
+  <!-- Open Graph & Twitter Meta Tags -->
+  <meta property="og:title" content="Paróquia Rainha Santa Isabel · Casa Verde, São Paulo">
+  <meta property="og:description"
+    content="Uma comunidade de fé, oração e acolhimento. Horários de missas, catequese, pastorais e secretaria paroquial.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.paroquiasantaisabel.com.br/">
+  <meta property="og:image" content="https://www.paroquiasantaisabel.com.br/images/logo.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Paróquia Rainha Santa Isabel">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paróquia Rainha Santa Isabel · Casa Verde, São Paulo">
+  <meta name="twitter:description"
+    content="Uma comunidade de fé, oração e acolhimento. Horários de missas, catequese, pastorais e secretaria paroquial.">
+  <meta name="twitter:image" content="https://www.paroquiasantaisabel.com.br/images/logo.png">
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "CatholicChurch",
+      "@type": "Church",
+      "@id": "https://www.paroquiasantaisabel.com.br/#church",
       "name": "Paróquia Rainha Santa Isabel",
       "description": "Comunidade católica na Casa Verde, Zona Norte de São Paulo. Arquidiocese de São Paulo, Região Santana, Decanato São Judas Tadeu.",
       "foundingDate": "1967-10-02",
       "telephone": "+55-11-3857-5051",
+      "url": "https://www.paroquiasantaisabel.com.br/",
+      "logo": "https://www.paroquiasantaisabel.com.br/images/logo.png",
+      "image": "https://www.paroquiasantaisabel.com.br/images/igreja.jpg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Elias Gannam, 331",
         "addressLocality": "São Paulo",
         "addressRegion": "SP",
+        "postalCode": "02515-050",
         "addressCountry": "BR"
-      }
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "12:00"
+        }
+      ],
+      "sameAs": [
+        "https://instagram.com/arquisp",
+        "https://instagram.com/regiaosantana",
+        "https://instagram.com/juventude.acutis"
+      ]
     }
   </script>
-  <title>Paróquia Rainha Santa Isabel</title>
+  <title>Paróquia Rainha Santa Isabel · Casa Verde, São Paulo</title>
   <meta name="description"
     content="Site institucional da Paróquia Rainha Santa Isabel, Casa Verde, SP. Arquidiocese de São Paulo, Região Santana, Decanato São Judas Tadeu. Fundada em 1967.">
-  <meta property="og:title" content="Paróquia Rainha Santa Isabel, Casa Verde, SP">
-  <meta property="og:description"
-    content="Uma comunidade de fé, oração e acolhimento. Horários de missas, catequese, pastorais e secretaria paroquial.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="Paróquia Rainha Santa Isabel">
 
   <!-- Google Fonts: Cormorant Garamond & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,6 +120,12 @@
       font-family: 'Cormorant Garamond', Georgia, serif;
     }
 
+    /* Focus Visible acessível */
+    :focus-visible {
+      outline: 2px solid #D8BD80;
+      outline-offset: 2px;
+    }
+
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -105,7 +147,6 @@
       background-color: rgba(15, 39, 34, 0.75);
       backdrop-filter: blur(4px);
     }
-
 
     .card-animated {
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
@@ -139,7 +180,6 @@
       }
     }
 
-    /* Liquid Glass corrigido e unificado */
     #main-header {
       animation: parishHeaderEnter .9s cubic-bezier(.16, 1, .3, 1) both;
       perspective: 900px;
@@ -216,14 +256,16 @@
       transition: width .4s cubic-bezier(.175, .885, .32, 1.5);
     }
 
-    #main-header nav a:hover {
+    #main-header nav a:hover,
+    #main-header nav a.active-nav {
       color: #F4E7CB !important;
       transform: translateY(-2px);
       text-shadow: 0 0 14px rgba(244, 231, 203, .35);
     }
 
     #main-header nav a:hover::after,
-    #main-header nav a:focus-visible::after {
+    #main-header nav a:focus-visible::after,
+    #main-header nav a.active-nav::after {
       width: 100%;
     }
 
@@ -293,12 +335,11 @@
       }
     }
 
-    /* Menu lateral em liquid glass */
     .drawer-glass {
       isolation: isolate;
       overflow-x: hidden;
       color: #F7F4EC;
-      background: rgba(20, 55, 47, .85);
+      background: rgba(20, 55, 47, .95);
       border-radius: 28px;
       border: 1px solid rgba(255, 255, 255, .34);
       box-shadow: -14px 0 44px rgba(3, 18, 15, .38),
@@ -319,7 +360,6 @@
       border-color: rgba(255, 255, 255, .28);
       transform: translateX(4px);
     }
-
 
     html {
       -webkit-text-size-adjust: 100%;
@@ -382,12 +422,12 @@
 
       <!-- Menu Principal (Desktop Links) -->
       <nav class="hidden lg:flex items-center gap-6 text-xs font-medium text-[#F7F4EC]/90">
-        <a href="#inicio" class="hover:text-[#D8BD80] transition-colors">Início</a>
-        <a href="#a-paroquia" class="hover:text-[#D8BD80] transition-colors">Paróquia</a>
-        <a href="#missas" class="hover:text-[#D8BD80] transition-colors">Missas</a>
-        <a href="#catequese" class="hover:text-[#D8BD80] transition-colors">Catequese</a>
-        <a href="#pastorais" class="hover:text-[#D8BD80] transition-colors">Pastorais</a>
-        <a href="#juventude" class="hover:text-[#D8BD80] transition-colors">Juventude</a>
+        <a href="#inicio" class="nav-link hover:text-[#D8BD80] transition-colors">Início</a>
+        <a href="#a-paroquia" class="nav-link hover:text-[#D8BD80] transition-colors">Paróquia</a>
+        <a href="#missas" class="nav-link hover:text-[#D8BD80] transition-colors">Missas</a>
+        <a href="#catequese" class="nav-link hover:text-[#D8BD80] transition-colors">Catequese</a>
+        <a href="#pastorais" class="nav-link hover:text-[#D8BD80] transition-colors">Pastorais</a>
+        <a href="#juventude" class="nav-link hover:text-[#D8BD80] transition-colors">Juventude</a>
       </nav>
 
       <!-- Bloco direito: atendimento, botão de destaque e menu -->
@@ -405,7 +445,7 @@
 
         <!-- Botão do menu (hambúrguer animado) -->
         <button id="mobile-menu-btn" type="button" aria-label="Abrir menu de navegação" aria-pressed="false"
-          data-state="closed"
+          aria-expanded="false" aria-controls="mobile-drawer" data-state="closed"
           class="group/hamburger relative inline-flex items-center justify-center h-10 w-10 rounded-full bg-white/10 hover:bg-white/20 border border-[#D8BD80]/30 text-white transition-colors focus:outline-none">
           <span class="relative flex size-4 flex-col items-center justify-center">
             <span
@@ -421,8 +461,9 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 bg-[#0F2722]/40 transition-opacity duration-300">
+  <!-- Mobile Drawer com Acessibilidade Aprimorada -->
+  <div id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu de Navegação Mobile"
+    class="hidden fixed inset-0 z-50 bg-[#0F2722]/60 transition-opacity duration-300">
     <div
       class="fixed inset-y-3 right-3 drawer-glass w-[calc(100%-1.5rem)] max-w-sm p-6 flex flex-col justify-between overflow-y-auto overscroll-contain">
       <div>
@@ -432,7 +473,7 @@
               class="h-7 w-auto object-contain drop-shadow-sm select-none">
             <span class="font-serif text-lg font-bold text-white">Santa Isabel</span>
           </div>
-          <button id="close-drawer-btn"
+          <button id="close-drawer-btn" aria-label="Fechar menu de navegação"
             class="p-2 rounded-full text-white bg-white/10 border border-white/25 hover:bg-white/20 transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -451,14 +492,11 @@
           <a href="#pastorais"
             class="mobile-nav-link px-3 py-2.5 rounded-lg text-base font-medium text-[#F7F4EC]">Pastorais</a>
           <a href="#juventude"
-            class="mobile-nav-link px-3 py-2.5 rounded-lg text-base font-medium text-[#F7F4EC]">Juventude
-            Acutis</a>
+            class="mobile-nav-link px-3 py-2.5 rounded-lg text-base font-medium text-[#F7F4EC]">Juventude Acutis</a>
           <a href="#secretaria"
-            class="mobile-nav-link px-3 py-2.5 rounded-lg text-base font-medium text-[#F7F4EC]">Secretaria
-            e Contato</a>
+            class="mobile-nav-link px-3 py-2.5 rounded-lg text-base font-medium text-[#F7F4EC]">Secretaria e Contato</a>
           <a href="#como-chegar"
-            class="mobile-nav-link px-3 py-2.5 rounded-lg text-base font-medium text-[#F7F4EC]">Como
-            Chegar</a>
+            class="mobile-nav-link px-3 py-2.5 rounded-lg text-base font-medium text-[#F7F4EC]">Como Chegar</a>
         </div>
       </div>
       <div class="space-y-3 pt-4 border-t border-white/20">
@@ -477,7 +515,7 @@
 
   <main id="conteudo">
     <!-- ==========================================
-       2. PRIMEIRO BANNER PRINCIPAL (HERO) COM IMAGEM DE FUNDO igreja.jpg
+       2. PRIMEIRO BANNER PRINCIPAL (HERO)
        ========================================== -->
     <section id="inicio"
       class="relative min-h-[90vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#0F2722] pt-24 bg-cover bg-center"
@@ -686,7 +724,7 @@
                 <div
                   class="w-12 h-12 rounded-xl bg-[#173D35] text-[#D8BD80] flex items-center justify-center shrink-0 font-serif text-2xl font-bold">
                   <img src="./images/logo.png" alt="Brasão Oficial da Paróquia Rainha Santa Isabel"
-                  class="w-[40px] sm:w-[40px] h-auto object-contain drop-shadow-md select-none">
+                    class="w-[40px] sm:w-[40px] h-auto object-contain drop-shadow-md select-none">
                 </div>
                 <div>
                   <span
@@ -845,8 +883,7 @@
 
         <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <p class="text-xs font-sans uppercase tracking-[0.25em] text-[#BA9F5E] font-semibold mb-2">Identidade &
-            Tradição
-            Católica</p>
+            Tradição Católica</p>
           <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[#173D35] tracking-tight mb-4">
             Conheça Nossa Paróquia
           </h2>
@@ -895,8 +932,7 @@
 
               <p id="tab-text" class="text-sm sm:text-base text-[#343A36]/85 leading-relaxed font-light">
                 A Paróquia Rainha Santa Isabel é um espaço sagrado de fé católica, adoração e comunhão cristã no bairro
-                de
-                Casa Verde / Vila Bandeirantes, na Zona Norte de São Paulo. Desde 1967, acolhemos famílias, crianças,
+                de Casa Verde / Vila Bandeirantes, na Zona Norte de São Paulo. Desde 1967, acolhemos famílias, crianças,
                 jovens e idosos ao redor do altar de Cristo.
               </p>
 
@@ -1015,8 +1051,7 @@
           </h2>
           <p class="text-sm sm:text-base text-[#343A36]/80 font-light leading-relaxed">
             A paróquia oferece diferentes etapas de formação cristã para cada fase da vida, desde a primeira infância
-            até
-            a vida adulta.
+            até a vida adulta.
           </p>
         </div>
 
@@ -1182,8 +1217,7 @@
           class="bg-[#173D35] text-[#F7F4EC] rounded-2xl p-6 sm:p-10 border border-[#D8BD80]/40 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
           <div class="space-y-2 text-center md:text-left">
             <span class="text-xs font-sans uppercase tracking-widest text-[#D8BD80] font-semibold">Período de Matrículas
-              e
-              Documentação</span>
+              e Documentação</span>
             <h4 class="font-serif text-2xl sm:text-3xl font-bold text-[#FFFFFF]">Deseja matricular seu filho ou iniciar
               sua preparação?</h4>
             <p class="text-sm text-[#F7F4EC]/85 max-w-xl font-light">
@@ -1339,8 +1373,7 @@
 
               <p class="text-sm text-[#343A36]/80 leading-relaxed font-light mb-4">
                 Jovem canonizado pela Igreja Católica em 2025, que fez da Santa Eucaristia o centro de sua juventude e
-                nos ensina
-                que a santidade é possível no dia a dia.
+                nos ensina que a santidade é possível no dia a dia.
               </p>
             </div>
 
@@ -1364,8 +1397,8 @@
                 </h3>
                 <p class="text-sm text-[#343A36]/85 leading-relaxed font-light mt-2">
                   A <strong>Juventude Acutis</strong> reúne os jovens da Paróquia Rainha Santa Isabel para partilhar a
-                  fé
-                  com leveza, profundidade e alegria. Encontros com adoração ao Santíssimo, partilhas e ação solidária.
+                  fé com leveza, profundidade e alegria. Encontros com adoração ao Santíssimo, partilhas e ação
+                  solidária.
                 </p>
               </div>
 
@@ -1456,7 +1489,7 @@
                   Rua Elias Gannam, 331
                 </p>
                 <p class="text-xs text-[#343A36]/80 mt-1">
-                  Vila Bandeirantes / Casa Verde (São Paulo, SP)
+                  Vila Bandeirantes / Casa Verde (São Paulo, SP) · CEP: 02515-050
                 </p>
               </div>
             </div>
@@ -1555,7 +1588,7 @@
                 Copiar endereço
               </button>
               <a href="https://www.google.com/maps/search/?api=1&query=Rua+Elias+Gannam+331+Vila+Bandeirantes+Sao+Paulo"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 class="px-4 py-2 rounded-lg bg-[#173D35] text-[#F7F4EC] text-xs font-semibold hover:bg-[#0F2722] transition-colors">
                 Abrir no Google Maps
               </a>
@@ -1588,7 +1621,7 @@
                 Copiar endereço
               </button>
               <a href="https://www.google.com/maps/search/?api=1&query=Rua+Brigadeiro+Xavier+de+Brito+577+Sao+Paulo"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 class="px-4 py-2 rounded-lg bg-[#173D35] text-[#F7F4EC] text-xs font-semibold hover:bg-[#0F2722] transition-colors">
                 Abrir no Google Maps
               </a>
@@ -1649,7 +1682,7 @@
                 Acompanhe as notícias pastorais, mensagens do Cardeal Arcebispo e comunicados arquidiocesanos.
               </p>
             </div>
-            <a href="https://instagram.com/arquisp" target="_blank"
+            <a href="https://instagram.com/arquisp" target="_blank" rel="noopener noreferrer"
               class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-[#173D35] text-[#F7F4EC] hover:bg-[#0F2722] text-sm font-semibold transition-colors duration-300">
               <span>Acessar @arquisp</span>
             </a>
@@ -1664,11 +1697,10 @@
               <p class="font-serif text-lg text-[#BA9F5E] font-medium mb-3">@regiaosantana</p>
               <p class="text-sm text-[#343A36]/80 leading-relaxed font-light mb-6">
                 Informativos, celebrações solenes e a caminhada eclesial das paróquias da Região Santana na Zona Norte
-                de
-                SP.
+                de SP.
               </p>
             </div>
-            <a href="https://instagram.com/regiaosantana" target="_blank"
+            <a href="https://instagram.com/regiaosantana" target="_blank" rel="noopener noreferrer"
               class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-[#173D35] text-[#F7F4EC] hover:bg-[#0F2722] text-sm font-semibold transition-colors duration-300">
               <span>Acessar @regiaosantana</span>
             </a>
@@ -1685,7 +1717,7 @@
                 Encontros, fotos, vigílias e o dinamismo da fé jovem em nossa paróquia inspirados por São Carlo Acutis.
               </p>
             </div>
-            <a href="https://instagram.com/juventude.acutis" target="_blank"
+            <a href="https://instagram.com/juventude.acutis" target="_blank" rel="noopener noreferrer"
               class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-[#173D35] text-[#F7F4EC] hover:bg-[#0F2722] text-sm font-semibold transition-colors duration-300">
               <span>Acessar @juventude.acutis</span>
             </a>
@@ -1747,8 +1779,7 @@
           </h4>
           <ul class="space-y-2 text-sm">
             <li><a href="#inicio" class="text-[#F7F4EC]/80 hover:text-[#D8BD80] transition-colors">Início</a></li>
-            <li><a href="#a-paroquia" class="text-[#F7F4EC]/80 hover:text-[#D8BD80] transition-colors">Paróquia</a>
-            </li>
+            <li><a href="#a-paroquia" class="text-[#F7F4EC]/80 hover:text-[#D8BD80] transition-colors">Paróquia</a></li>
             <li><a href="#missas" class="text-[#F7F4EC]/80 hover:text-[#D8BD80] transition-colors">Horários das
                 Missas</a></li>
             <li><a href="#catequese" class="text-[#F7F4EC]/80 hover:text-[#D8BD80] transition-colors">Catequese e
@@ -1783,15 +1814,15 @@
         <div class="space-y-4">
           <h4 class="font-serif text-xl font-bold text-[#D8BD80] pb-2 border-b border-[#D8BD80]/20">Canais Oficiais</h4>
           <div class="space-y-2 pt-1 text-xs">
-            <a href="https://instagram.com/juventude.acutis" target="_blank"
+            <a href="https://instagram.com/juventude.acutis" target="_blank" rel="noopener noreferrer"
               class="block p-2.5 rounded bg-[#173D35] hover:bg-[#173D35]/80 text-[#F7F4EC] border border-[#D8BD80]/30 transition-colors">
               @juventude.acutis
             </a>
-            <a href="https://instagram.com/arquisp" target="_blank"
+            <a href="https://instagram.com/arquisp" target="_blank" rel="noopener noreferrer"
               class="block p-2.5 rounded bg-[#173D35] hover:bg-[#173D35]/80 text-[#F7F4EC] border border-[#D8BD80]/30 transition-colors">
               @arquisp (Arquidiocese)
             </a>
-            <a href="https://instagram.com/regiaosantana" target="_blank"
+            <a href="https://instagram.com/regiaosantana" target="_blank" rel="noopener noreferrer"
               class="block p-2.5 rounded bg-[#173D35] hover:bg-[#173D35]/80 text-[#F7F4EC] border border-[#D8BD80]/30 transition-colors">
               @regiaosantana (Região Santana)
             </a>
@@ -1814,7 +1845,7 @@
   <div id="inscription-modal" role="dialog" aria-modal="true" aria-label="Informações sobre inscrições"
     class="hidden fixed inset-0 z-50 overflow-y-auto modal-backdrop flex p-3 sm:p-4">
     <div class="relative bg-white rounded-2xl max-w-xl w-full m-auto p-5 sm:p-8 shadow-2xl border border-[#D8BD80]">
-      <button onclick="closeInscriptionModal()"
+      <button onclick="closeInscriptionModal()" aria-label="Fechar modal de inscrições"
         class="absolute top-5 right-5 p-2 text-[#343A36]/60 hover:text-[#173D35]">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -1825,8 +1856,8 @@
         <span class="text-[11px] uppercase tracking-widest text-[#BA9F5E] font-semibold block mb-1">Formação Cristã
           (Paróquia Rainha Santa Isabel)</span>
         <h3 class="font-serif text-2xl sm:text-3xl font-bold text-[#173D35]">Informações sobre Inscrições</h3>
-        <p class="text-sm text-[#343A36]/75 mt-1">Preencha para enviar seus dados diretamente para a
-          secretaria paroquial.</p>
+        <p class="text-sm text-[#343A36]/75 mt-1">Preencha para enviar seus dados diretamente para a secretaria
+          paroquial.</p>
       </div>
 
       <form onsubmit="handleInscriptionSubmit(event)" class="space-y-4 text-left">
@@ -1890,7 +1921,8 @@
   <div id="pastoral-modal" role="dialog" aria-modal="true" aria-label="Como participar das pastorais"
     class="hidden fixed inset-0 z-50 overflow-y-auto modal-backdrop flex p-3 sm:p-4">
     <div class="relative bg-white rounded-2xl max-w-lg w-full m-auto p-5 sm:p-8 shadow-2xl border border-[#D8BD80]">
-      <button onclick="closePastoralModal()" class="absolute top-5 right-5 p-2 text-[#343A36]/60 hover:text-[#173D35]">
+      <button onclick="closePastoralModal()" aria-label="Fechar modal de pastorais"
+        class="absolute top-5 right-5 p-2 text-[#343A36]/60 hover:text-[#173D35]">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -1944,12 +1976,13 @@
        ========================================== -->
   <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-30 flex flex-col gap-3">
     <button id="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      aria-label="Voltar ao topo da página"
       class="hidden w-11 h-11 rounded-full bg-[#173D35] text-[#D8BD80] shadow-lg border border-[#D8BD80]/50 flex items-center justify-center hover:-translate-y-1 transition-all duration-300">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
       </svg>
     </button>
-    <a href="tel:1138575051"
+    <a href="tel:1138575051" aria-label="Ligar para a Secretaria Paroquial"
       class="w-12 h-12 rounded-full bg-[#D8BD80] text-[#0F2722] shadow-xl border border-white/60 flex items-center justify-center hover:scale-110 transition-all duration-300"
       title="Ligar para a Secretaria: (11) 3857-5051">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1961,24 +1994,32 @@
 
 
   <!-- ==========================================
-       JAVASCRIPT GERAL E CONTROLE DO HAMBÚRGUER
+       JAVASCRIPT APRIMORADO (ACESSIBILIDADE, FOCO E SCROLL SPY)
        ========================================== -->
   <script>
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const drawer = document.getElementById('mobile-drawer');
     const closeDrawerBtn = document.getElementById('close-drawer-btn');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    let lastFocusedElement = null;
 
     function setMenuState(isOpen) {
       document.body.style.overflow = isOpen ? 'hidden' : '';
       if (isOpen) {
+        lastFocusedElement = document.activeElement;
         drawer.classList.remove('hidden');
         mobileBtn.setAttribute('data-state', 'open');
         mobileBtn.setAttribute('aria-pressed', 'true');
+        mobileBtn.setAttribute('aria-expanded', 'true');
+        // Focar no botão de fechar do drawer
+        setTimeout(() => closeDrawerBtn.focus(), 50);
       } else {
         drawer.classList.add('hidden');
         mobileBtn.setAttribute('data-state', 'closed');
         mobileBtn.setAttribute('aria-pressed', 'false');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        if (lastFocusedElement) {
+          lastFocusedElement.focus();
+        }
       }
     }
 
@@ -1989,7 +2030,36 @@
       });
       closeDrawerBtn.addEventListener('click', () => setMenuState(false));
       drawer.addEventListener('click', (e) => { if (e.target === drawer) setMenuState(false); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenuState(false); });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (!drawer.classList.contains('hidden')) {
+            setMenuState(false);
+          }
+          closeInscriptionModal();
+          closePastoralModal();
+        }
+
+        // Armadilha de foco (Focus Trap) para o drawer mobile
+        if (e.key === 'Tab' && !drawer.classList.contains('hidden')) {
+          const focusableElements = drawer.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+          const firstElement = focusableElements[0];
+          const lastElement = focusableElements[focusableElements.length - 1];
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              lastElement.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              firstElement.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      });
+
       drawer.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuState(false)));
     }
 
@@ -2000,7 +2070,37 @@
       } else {
         scrollTopBtn.classList.add('hidden');
       }
-    });
+    }, { passive: true });
+
+    // Intersection Observer para destacar seção ativa no menu desktop
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('#main-header nav a.nav-link');
+
+    if (sections.length && navLinks.length) {
+      const observerCallback = (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active-nav');
+              } else {
+                link.classList.remove('active-nav');
+              }
+            });
+          }
+        });
+      };
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+      sections.forEach(section => observer.observe(section));
+    }
 
     const tabData = {
       quemsomos: {
@@ -2078,10 +2178,6 @@
     function closePastoralModal() {
       document.getElementById('pastoral-modal').classList.add('hidden');
     }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { closeInscriptionModal(); closePastoralModal(); }
-    });
 
     function handleInscriptionSubmit(e) {
       e.preventDefault();
